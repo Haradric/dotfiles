@@ -30,7 +30,10 @@ configure_zsh() {
     config_dir="$HOME/.zsh"
     config_file="$HOME/.zshrc"
 
-    [ $SHELL = "/bin/zsh" ] || chsh -s /bin/zsh
+    [ $SHELL = "/bin/zsh" ] || {
+        echo "Setting zsh as default shell"
+        sudo chsh -s /bin/zsh
+    }
 
     backup $config_dir $config_file $HOME/.zfunctions
     ln -s $DIR/zsh   $config_dir
