@@ -66,6 +66,9 @@ antigen bundle <<EOBUNDLES
     zsh-users/zsh-completions
 EOBUNDLES
 
+# Autoenv for zsh
+antigen bundle Tarrasch/zsh-autoenv
+
 # Allow zsh to run multiple asynchronous jobs
 antigen bundle mafredri/zsh-async
 
