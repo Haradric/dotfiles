@@ -17,9 +17,7 @@ configure_zsh() {
     config_dir="$HOME/.zsh"
     config_file="$HOME/.zshrc"
 
-    #enable zsh as default shell
-
-    #configure pure
+    [ $SHELL = "/bin/zsh" ] || chsh -s /bin/zsh
 
     backup $config_dir $config_file $HOME/.zfunctions
     ln -s $DIR/zsh   $config_dir
@@ -40,3 +38,4 @@ configure_vim() {
 
 configure_zsh
 configure_vim
+
