@@ -49,22 +49,11 @@ unsetopt beep
 ADOTDIR=$HOME/.zsh/.antigen
 source $HOME/.zsh/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library
-antigen use oh-my-zsh
+# Fish-like auto suggestions
+antigen bundle zsh-users/zsh-autosuggestions
 
-antigen bundle <<EOBUNDLES
-    # Bundles from the default repo (robbyrussell's oh-my-zsh)
-    #git
-
-    # Syntax highlighting bundle.
-    zsh-users/zsh-syntax-highlighting
-
-    # Fish-like auto suggestions
-    zsh-users/zsh-autosuggestions
-
-    # Extra zsh completions
-    zsh-users/zsh-completions
-EOBUNDLES
+# Extra zsh completions
+antigen bundle zsh-users/zsh-completions
 
 # Autoenv for zsh
 antigen bundle Tarrasch/zsh-autoenv
