@@ -13,6 +13,19 @@ backup() {
     done
 }
 
+configure_git() {
+    config_file=$HOME/.gitconfig
+
+    ppa=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep git-core)
+    [ -z "$ppa" ] && {
+        echo "Adding PPA from the maintainers of git"
+        sudo add-apt-repository ppa:git-core/ppa
+    }
+
+    backup $config_file
+    ln -s $DIR/gitconfig $config_file
+}
+
 configure_zsh() {
     config_dir="$HOME/.zsh"
     config_file="$HOME/.zshrc"
@@ -36,6 +49,7 @@ configure_vim() {
     ln -s $DIR/vim/bundle/vim-pathogen/autoload $HOME/.vim/autoload
 }
 
+configure_git
 configure_zsh
 configure_vim
 
