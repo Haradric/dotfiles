@@ -1,8 +1,6 @@
 
 export EDITOR="vim"
-#export TERM="xterm-256color"
-
-export PATH=~/bin:$PATH
+export PATH=~/bin:/usr/local/sbin:$PATH:$PATH
 
 HISTFILE=~/.zsh/.zsh_hist
 HISTSIZE=9999
@@ -18,21 +16,6 @@ bindkey '^[OF' end-of-line
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 
-#fpath=( $HOME/.zsh/.zfunctions $fpath )
-#autoload -U promptinit; promptinit
-#prompt pure
-
-alias zconfig='$EDITOR ~/.zshrc'
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ll -a'
-alias grep='grep --color=auto'
-alias ack='ack-grep --color'
-alias du='du -h --max-depth=1 | sort -h'
-alias zshconfig="$EDITOR ~/.zshrc"
-alias random_commit='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
-alias emacs='emacs -nw'
-
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
@@ -41,9 +24,18 @@ setopt inc_append_history
 setopt HIST_IGNORE_DUPS
 unsetopt beep
 
-#setopt completealiases
-#autoload -Uz compinit
-#compinit
+[ $(uname) = 'Darwin' ] && {
+    alias ls='ls -G'
+} || {
+    alias grep='grep --color=auto'
+    alias ack='ack-grep --color'
+    alias ls='ls --color=auto'
+}
+alias ll='ls -l'
+alias la='ll -a'
+alias du='du -h --max-depth=1 | sort -h'
+alias random_commit='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+alias zshconfig='$EDITOR ~/.zshrc'
 
 #antigen init
 ADOTDIR=$HOME/.zsh/.antigen
@@ -66,3 +58,4 @@ antigen bundle sindresorhus/pure
 
 # Tell antigen that you're done
 antigen apply
+

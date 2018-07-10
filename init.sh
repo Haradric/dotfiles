@@ -16,12 +16,13 @@ backup() {
 configure_git() {
     config_file=$HOME/.gitconfig
 
-    ppa=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep git-core)
-    [ -z "$ppa" ] && {
-        echo "Adding PPA from the maintainers of git"
-        sudo add-apt-repository ppa:git-core/ppa
+    [ $(uname) = 'Darwin' ] || {
+        ppa=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep git-core)
+        [ -z "$ppa" ] && {
+            echo "Adding PPA from the maintainers of git"
+            sudo add-apt-repository ppa:git-core/ppa
+        }
     }
-
     backup $config_file
     ln -s $DIR/gitconfig $config_file
 }
