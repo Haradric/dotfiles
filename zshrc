@@ -41,9 +41,6 @@ alias zshconfig='$EDITOR ~/.zshrc'
 ADOTDIR=$HOME/.zsh/.antigen
 source $HOME/.zsh/antigen/antigen.zsh
 
-# Fish-like auto suggestions
-antigen bundle zsh-users/zsh-autosuggestions
-
 # Extra zsh completions
 antigen bundle zsh-users/zsh-completions
 
