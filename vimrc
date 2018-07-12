@@ -1,3 +1,28 @@
+" Configure Vundle, plugin manager
+    " required
+        set nocompatible
+        filetype off
+
+    " set the runtime path to include Vundle and initialize
+        set rtp+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
+            " let Vundle manage Vundle, required
+                Plugin 'VundleVim/Vundle.vim'
+            " cscope maps
+                Plugin 'joe-skb7/cscope-maps'
+            " The file system explorer
+                Plugin 'scrooloose/nerdtree'
+            " Plugin that displays tags in a window, ordered by scope
+                Plugin 'majutsushi/tagbar'
+            " Plugin to respect the Linux kernel coding style
+                Plugin 'vivien/vim-linux-coding-style'
+            " Plugin for vim to enable opening a file in a given line
+                Plugin 'bogado/file-line'
+        call vundle#end()
+
+    " required
+        filetype plugin indent on
+
     set viminfo+=n~/.vim/.viminfo
 
 "Spaces & Tabs
@@ -62,7 +87,4 @@
 "   set t_Co=256
 
 "    set mouse=a
-    execute pathogen#infect()
-    syntax on
-    filetype plugin indent on
 

@@ -1,5 +1,5 @@
 .zsh_hist
 .antigen
-autoload
+vim/bundle/*
 .viminfo
 .netrwhist

@@ -39,6 +39,8 @@ configure_zsh() {
     backup $config_dir $config_file $HOME/.zfunctions
     ln -s $DIR/zsh   $config_dir
     ln -s $DIR/zshrc $config_file
+
+    vim +PluginInstall +qall
 }
 
 configure_vim() {
@@ -48,9 +50,6 @@ configure_vim() {
     backup $config_dir $config_file
     ln -s $DIR/vim   $config_dir
     ln -s $DIR/vimrc $config_file
-
-    rm -rf $HOME/.vim/autoload
-    ln -s $DIR/vim/bundle/vim-pathogen/autoload $HOME/.vim/autoload
 }
 
 configure_git
