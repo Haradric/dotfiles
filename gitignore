@@ -1,0 +1,21 @@
+# Emacs
+\#*\#
+.\#*
+
+# Vim
+*.swp
+*~
+*.back
+
+# macos
+.DS_Store
+._*
+
+# Xcode
+*.xcodeproj
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+debug

@@ -23,8 +23,9 @@ configure_git() {
             sudo add-apt-repository ppa:git-core/ppa
         }
     }
-    backup $config_file
+    backup $config_file $HOME/.gitignore
     ln -s $DIR/gitconfig $config_file
+    ln -s $DIR/gitignore $HOME/.gitignore
 }
 
 configure_zsh() {
