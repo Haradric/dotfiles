@@ -1,6 +1,7 @@
 
 export EDITOR="vim"
 export PATH=~/bin:/usr/local/sbin:$PATH:$PATH
+LESSHISTFILE=/dev/null
 
 HISTFILE=~/.zsh/.zsh_hist
 HISTSIZE=9999
@@ -19,10 +20,8 @@ bindkey '^[^[[C' forward-word
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
-#setopt share_history
 setopt inc_append_history
-setopt HIST_IGNORE_DUPS
-unsetopt beep
+setopt nobeep
 
 [ $(uname) = 'Darwin' ] && {
     alias ls='ls -G'
