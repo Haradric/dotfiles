@@ -18,6 +18,8 @@
                 Plugin 'vivien/vim-linux-coding-style'
             " Plugin for vim to enable opening a file in a given line
                 Plugin 'bogado/file-line'
+            " Autocompletion
+                Plugin 'Valloric/YouCompleteMe'
         call vundle#end()
 
     " required

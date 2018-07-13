@@ -51,6 +51,9 @@ configure_vim() {
     backup $config_dir $config_file
     ln -s $DIR/vim   $config_dir
     ln -s $DIR/vimrc $config_file
+
+    vim +PluginInstall +qall && \
+    $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 }
 
 configure_git
