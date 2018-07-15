@@ -81,7 +81,7 @@
     let NERDTreeIgnore = ['\.[oa]$']
 
 " vim-linux-coding-style
-    let g:linuxsty_patterns = [ "/usr/src/", "/home/mbraslavskyi/kernel/repos/linux/" ]
+    let g:linuxsty_patterns = [ "/usr/src/", "/home/mbraslavskyi/repos/linux/", "/home/nikita/kernel/modules/" ]
 "   map  <C-i> :LinuxCodingStyle<cr>
 
     map <F3>  :TagbarToggle<cr>
