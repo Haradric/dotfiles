@@ -16,13 +16,6 @@ backup() {
 configure_git() {
     config_file=$HOME/.gitconfig
 
-    [ $(uname) = 'Darwin' ] || {
-        ppa=$(grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep git-core)
-        [ -z "$ppa" ] && {
-            echo "Adding PPA from the maintainers of git"
-            sudo add-apt-repository ppa:git-core/ppa
-        }
-    }
     backup $config_file $HOME/.gitignore
     ln -s $DIR/gitconfig $config_file
     ln -s $DIR/gitignore $HOME/.gitignore
@@ -31,11 +24,6 @@ configure_git() {
 configure_zsh() {
     config_dir="$HOME/.zsh"
     config_file="$HOME/.zshrc"
-
-    [ $SHELL = "/bin/zsh" ] || {
-        echo "Setting zsh as default shell"
-        sudo chsh -s /bin/zsh
-    }
 
     backup $config_dir $config_file $HOME/.zfunctions
     ln -s $DIR/zsh   $config_dir
