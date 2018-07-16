@@ -3,7 +3,7 @@ export EDITOR="vim"
 export PATH=~/bin:/usr/local/sbin:$PATH:$PATH
 LESSHISTFILE=/dev/null
 
-HISTFILE=~/.zsh/.zsh_hist
+HISTFILE=~/.zsh_hist
 HISTSIZE=9999
 SAVEHIST=9999
 
