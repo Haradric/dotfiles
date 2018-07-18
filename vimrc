@@ -86,6 +86,9 @@
 
     map <F3>  :TagbarToggle<cr>
 
+" YouCompleteMe
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
 "   set t_Co=256
 
 "    set mouse=a
