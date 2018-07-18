@@ -88,6 +88,10 @@
 
 " YouCompleteMe
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+    highlight YcmErrorSection cterm=none ctermbg=red ctermfg=white
+    highlight YcmErrorSign cterm=none ctermbg=red ctermfg=white
+    highlight YcmWarningSection cterm=none ctermbg=yellow ctermfg=black
+    highlight YcmWarningSign cterm=none ctermbg=yellow ctermfg=black
 
 "   set t_Co=256
 
