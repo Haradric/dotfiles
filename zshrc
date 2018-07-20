@@ -1,7 +1,6 @@
 
 export EDITOR="vim"
 export PATH=~/bin:/usr/local/sbin:$PATH
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 LESSHISTFILE=/dev/null
 
 HISTFILE=~/.zsh_hist
