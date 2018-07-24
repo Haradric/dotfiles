@@ -63,6 +63,8 @@
 " 80 characters line
     set colorcolumn=81
 
+    set encoding=utf-8
+
 " "execute "set colorcolumn=" . join(range(81,335), ',')
     highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 
