@@ -39,7 +39,7 @@ configure_vim() {
     ln -s $DIR/vimrc $config_file
 
     vim +PluginInstall +qall
-    ./vim/bundle/YouCompleteMe/install.sh --clang-completer
+    ./vim/bundle/YouCompleteMe/install.py --clang-completer
     rm -f ./vim/bundle/YouCompleteMe/.ycm_extra_conf.py && \
     ln -s $DIR/vim/ycm_extra_conf.py $DIR/vim/bundle/YouCompleteMe/.ycm_extra_conf.py
 }
