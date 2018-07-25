@@ -1,29 +1,20 @@
 " Configure Vundle, plugin manager
-    " required
-        set nocompatible
-        filetype off
+    set nocompatible    " required
+    filetype off        " required
 
-    " set the runtime path to include Vundle and initialize
-        set rtp+=~/.vim/bundle/Vundle.vim
-        call vundle#begin()
-            " let Vundle manage Vundle, required
-                Plugin 'VundleVim/Vundle.vim'
-            " cscope maps
-                Plugin 'joe-skb7/cscope-maps'
-            " The file system explorer
-                Plugin 'scrooloose/nerdtree'
-            " Plugin that displays tags in a window, ordered by scope
-                Plugin 'majutsushi/tagbar'
-            " Plugin to respect the Linux kernel coding style
-                Plugin 'vivien/vim-linux-coding-style'
-            " Plugin for vim to enable opening a file in a given line
-                Plugin 'bogado/file-line'
-            " Autocompletion
-                Plugin 'Valloric/YouCompleteMe'
-        call vundle#end()
-
-    " required
-        filetype plugin indent on
+" set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+        Plugin 'VundleVim/Vundle.vim'          " let Vundle manage Vundle, required
+        Plugin 'joe-skb7/cscope-maps'          " cscope maps
+        Plugin 'scrooloose/nerdtree'           " The file system explorer
+        Plugin 'majutsushi/tagbar'             " Plugin that displays tags in a window, ordered by scope
+        Plugin 'vivien/vim-linux-coding-style' " Plugin to respect the Linux kernel coding style
+        Plugin 'bogado/file-line'              " Plugin for vim to enable opening a file in a given line
+        Plugin 'Valloric/YouCompleteMe'        " Autocompletion
+    call vundle#end()
+    filetype plugin indent on   " required
+" end of Vundle config
 
     set viminfo+=n~/.vim/.viminfo
 
@@ -36,7 +27,6 @@
 "UI Config
 	set number			" show line numbers
 	set showcmd			" show command in bottom bar
-	"set cursorline		" highlight current line
 	set wildmenu		" visual autocomplete for command menu
 	set lazyredraw		" redraw only when we need to
 	set showmatch		" highlight matching [{()}]
@@ -60,12 +50,11 @@
 
 	nnoremap gV `[v`]	" highlight last inserted text
 
-" 80 characters line
-    set colorcolumn=81
+    set backspace=2     " make backspace work like most other programs
+    set encoding=utf-8  " encoding
 
-    set encoding=utf-8
-
-" "execute "set colorcolumn=" . join(range(81,335), ',')
+    set t_Co=256        " make Vim use 256 colors
+    set colorcolumn=81  " 80 characters line
     highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 
 " Highlight trailing spaces
@@ -78,15 +67,17 @@
     autocmd BufWinLeave * call clearmatches()
 
 " NERDTree settings
-    map  <C-n> :NERDTreeToggle<cr>
+    map <C-n> :NERDTreeToggle<cr>
     map <F2>  :NERDTreeToggle<cr>
     let NERDTreeIgnore = ['\.[oa]$']
 
+" Tagbar
+    map <F3>  :TagbarToggle<cr>
+
 " vim-linux-coding-style
     let g:linuxsty_patterns = [ "/usr/src/", "/home/mbraslavskyi/repos/linux/", "/home/nikita/kernel/modules/" ]
-"   map  <C-i> :LinuxCodingStyle<cr>
-
-    map <F3>  :TagbarToggle<cr>
+    map <C-i> :LinuxCodingStyle<cr>
+    map <F4>  :LinuxCodingStyle<cr>
 
 " YouCompleteMe
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
@@ -94,8 +85,6 @@
     highlight YcmErrorSign cterm=none ctermbg=red ctermfg=white
     highlight YcmWarningSection cterm=none ctermbg=yellow ctermfg=black
     highlight YcmWarningSign cterm=none ctermbg=yellow ctermfg=black
-
-"   set t_Co=256
 
 "    set mouse=a
 
