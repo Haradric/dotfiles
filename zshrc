@@ -1,9 +1,8 @@
 
 export EDITOR="vim"
-export PATH=~/bin:/usr/local/sbin:$PATH
-LESSHISTFILE=/dev/null
+export PATH=$HOME/bin:/usr/local/sbin:$PATH
 
-HISTFILE=~/.zsh_hist
+HISTFILE=$HOME/.zsh_hist
 HISTSIZE=9999
 SAVEHIST=9999
 
@@ -32,26 +31,18 @@ setopt nobeep
 }
 alias ll='ls -l'
 alias la='ll -a'
-alias du='du -h --max-depth=1 | sort -h'
+alias less='less --ignore-case --LONG-PROMPT --tabs=4'
+alias duh='du -h --max-depth=1 | sort -h'
 alias random_commit='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias zshconfig='$EDITOR ~/.zshrc'
 
-#antigen init
-ADOTDIR=$HOME/.zsh/.antigen
-source $HOME/.zsh/antigen/antigen.zsh
+# antigen init
+source $HOME/.antigen.zsh
+source $HOME/.antigenrc
 
-# Extra zsh completions
-antigen bundle zsh-users/zsh-completions
+# Load Homebrew config script
+#source $HOME/.brewconfig.zsh
 
-# Autoenv for zsh
-antigen bundle Tarrasch/zsh-autoenv
-
-# Allow zsh to run multiple asynchronous jobs
-antigen bundle mafredri/zsh-async
-
-# Load the theme
-antigen bundle sindresorhus/pure
-
-# Tell antigen that you're done
-antigen apply
+# other settings
+export LESSHISTFILE=/dev/null
 

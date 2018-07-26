@@ -1,0 +1,15 @@
+# Extra zsh completions
+antigen bundle zsh-users/zsh-completions
+
+# Autoenv for zsh
+antigen bundle Tarrasch/zsh-autoenv
+
+# Allow zsh to run multiple asynchronous jobs
+antigen bundle mafredri/zsh-async
+
+# Load the theme
+antigen bundle sindresorhus/pure
+
+# Tell antigen that you're done
+antigen apply
+

@@ -2,49 +2,27 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-backup() {
-    for file in "$@"
-    do
-        backup="$file"_backup
-        [ -e $file ] && {
-            rm -rf $backup 2>&-
-            mv $file $backup
-        }
-    done
-}
+# zsh
+cp "$DIR"/zshrc "$HOME"/.zshrc
 
-configure_git() {
-    config_file=$HOME/.gitconfig
+# antigen for zsh
+curl -L git.io/antigen > "$HOME"/.antigen.zsh
+cp "$DIR"/antigenrc "$HOME"/.antigenrc
 
-    backup $config_file $HOME/.gitignore
-    ln -s $DIR/gitconfig $config_file
-    ln -s $DIR/gitignore $HOME/.gitignore
-}
+# git
+cp "$DIR"/gitconfig "$HOME"/.gitconfig
+cp "$DIR"/gitignore "$HOME"/.gitignore
 
-configure_zsh() {
-    config_dir="$HOME/.zsh"
-    config_file="$HOME/.zshrc"
+# vim
+cp -r "$DIR"/vimrc "$HOME"/.vimrc
+mkdir -p "$HOME"/.vim/bundle
 
-    backup $config_dir $config_file $HOME/.zfunctions
-    ln -s $DIR/zsh   $config_dir
-    ln -s $DIR/zshrc $config_file
-}
+# Vundle for vim
+git clone https://github.com/VundleVim/Vundle.vim.git \
+        "$HOME"/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
-configure_vim() {
-    config_dir="$HOME/.vim"
-    config_file="$HOME/.vimrc"
-
-    backup $config_dir $config_file
-    ln -s $DIR/vim   $config_dir
-    ln -s $DIR/vimrc $config_file
-
-    vim +PluginInstall +qall
-    ./vim/bundle/YouCompleteMe/install.py --clang-completer
-    rm -f ./vim/bundle/YouCompleteMe/.ycm_extra_conf.py && \
-    ln -s $DIR/vim/ycm_extra_conf.py $DIR/vim/bundle/YouCompleteMe/.ycm_extra_conf.py
-}
-
-configure_git
-configure_zsh
-configure_vim
+# YouCompleteMe for vim
+"$HOME"/.vim/bundle/YouCompleteMe/install.py --clang-completer
+cp ycm_extra_conf.py "$HOME"/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py
 
