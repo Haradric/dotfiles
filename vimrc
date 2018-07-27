@@ -1,3 +1,4 @@
+
 " Configure Vundle, plugin manager
     set nocompatible    " required
     filetype off        " required
@@ -11,7 +12,11 @@
         Plugin 'majutsushi/tagbar'             " Plugin that displays tags in a window, ordered by scope
         Plugin 'vivien/vim-linux-coding-style' " Plugin to respect the Linux kernel coding style
         Plugin 'bogado/file-line'              " Plugin for vim to enable opening a file in a given line
-        Plugin 'Valloric/YouCompleteMe'        " Autocompletion
+
+        if empty($NOYCM)
+            Plugin 'Valloric/YouCompleteMe'    " Autocompletion
+        endif
+
     call vundle#end()
     filetype plugin indent on   " required
 " end of Vundle config
