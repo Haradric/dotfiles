@@ -27,11 +27,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git \
         "$HOME"/.vim/bundle/Vundle.vim
 
 # install vim plugins
-vim +PluginInstall +qall
+vim -c "PluginInstall" -c "qall"
 
 # Compile YouCompleteMe with semantic support for C-family languages
 [ "$1" == "--fast" ] || {
-    "$HOME"/.vim/bundle/YouCompleteMe/install.py --clang-completer
+    cd "$HOME"/.vim/bundle/YouCompleteMe
+    git submodule update --init --recursive
+    ./install.py --clang-completer
+    cd -
     cp ycm_extra_conf.py "$HOME"/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py
 }
 
