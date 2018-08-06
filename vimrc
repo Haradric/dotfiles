@@ -33,6 +33,10 @@
     " A light and configurable statusline/tabline
     Plugin 'itchyny/lightline.vim'
 
+    " Per project/tree configuration plugins
+    Plugin 'LucHermitte/lh-vim-lib'
+    Plugin 'LucHermitte/local_vimrc'
+
     if empty($NOYCM)
         " Autocompletion
         Plugin 'Valloric/YouCompleteMe'
@@ -89,7 +93,7 @@
     set mouse=
 
 " Highlight trailing spaces
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+    " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
     highlight ExtraWhitespace ctermbg=red guibg=red
     match ExtraWhitespace /\s\+$/
     autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -127,9 +131,12 @@
     map <F3>  :TagbarToggle<cr>
 
 " vim-linux-coding-style
-    let g:linuxsty_patterns = [ "/usr/src/", "/home/nikita/linux-kernel/modules/", "/home/nikita/linux-kernel/linux/" ]
+    let g:linuxsty_patterns = [ "/usr/src/" ]
     map <C-i> :LinuxCodingStyle<cr>
     map <F4>  :LinuxCodingStyle<cr>
+
+" local_vimrc
+    let g:local_vimrc = ['.vimrc.local']
 
 " YouCompleteMe
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
