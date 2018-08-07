@@ -24,7 +24,7 @@ mkdir -p "$HOME"/.vim/bundle
 
 # Vundle for vim
 git clone https://github.com/VundleVim/Vundle.vim.git \
-        "$HOME"/.vim/bundle/Vundle.vim
+        "$HOME"/.vim/bundle/Vundle.vim 2>&-
 
 # install vim plugins
 vim -c "PluginInstall" -c "qall"
