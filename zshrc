@@ -1,6 +1,8 @@
 
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
+
 export EDITOR="vim"
-export PATH=$HOME/bin:/usr/local/sbin:$PATH
 
 HISTFILE=$HOME/.zsh_hist
 HISTSIZE=9999
