@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -6,9 +6,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cp "$DIR"/zshrc "$HOME"/.zshrc
 
 [ "$1" == "--fast" ] && {
-        export NOYCM=1
-        echo "export NOYCM=1" >> "$HOME"/.zshrc
+    ycm=1
 }
+export NOYCM=$ycm
 
 # antigen for zsh
 curl -L git.io/antigen > "$HOME"/.antigen.zsh
