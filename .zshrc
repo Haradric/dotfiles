@@ -1,7 +1,8 @@
 
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-
+export PATH="/usr/local/opt/ccache/libexec:$PATH"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 export EDITOR="vim"
 
 HISTFILE=$HOME/.zsh_hist
@@ -37,6 +38,9 @@ alias less='less --ignore-case --LONG-PROMPT --tabs=4'
 alias duh='du -h --max-depth=1 | sort -h'
 alias random_commit='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias zshconfig='$EDITOR ~/.zshrc'
+alias trm='trash -F'
+alias smerge='/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge'
+alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
 
 # antigen init
 source $HOME/.antigen.zsh
@@ -47,4 +51,6 @@ source $HOME/.antigenrc
 
 # other settings
 export LESSHISTFILE=/dev/null
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export BAT_THEME='Monokai Extended Bright'
 

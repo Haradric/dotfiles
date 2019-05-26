@@ -1,8 +1,9 @@
 [alias]
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
-    lg   = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    lg   = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --
+    lol  = log --color --graph --abbrev-commit --decorate --pretty=oneline
+    lola = log --color --graph --abbrev-commit --decorate --pretty=oneline --all
 
 [filter "lfs"]
     clean    = git-lfs clean -- %f
@@ -20,7 +21,9 @@
 [push]
     default = simple
 
+[diff]
+    tool = vimdiff
+
 [advice]
     statusHints  = false
     detachedHead = false
-
