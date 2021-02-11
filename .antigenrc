@@ -8,7 +8,7 @@ antigen bundle Tarrasch/zsh-autoenv
 antigen bundle mafredri/zsh-async
 
 # Load the theme
-antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure --branch=main
 
 # Tell antigen that you're done
 antigen apply
